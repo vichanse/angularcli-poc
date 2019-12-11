@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "customer-reference": [
+        "dist/customer-reference"
+      ],
+      "customer-reference/*": [
+        "dist/customer-reference/*"
+      ],
+      "edit-input": [
+        "dist/edit-input"
+      ],
+      "edit-input/*": [
+        "dist/edit-input/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

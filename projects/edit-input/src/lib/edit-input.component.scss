@@ -1,0 +1,43 @@
+$lightGray: #c8c8c8;
+
+.cell {
+  border: 2px solid transparent;
+  padding: 11px 20px;
+  width: 30%;
+  height: 100%;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px dashed $lightGray;
+  }
+}
+
+.cellInput {
+  border: 2px solid transparent;
+  padding: 11px 20px;
+  width: 30%;
+  height: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-self: center;
+  float: right;
+}
+
+.icon svg,
+.icon img {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+.icon.baseline svg,
+.icon img {
+  top: 0.125em;
+  position: relative;
+}
+
+[contenteditable='true']:empty::before {
+  content: attr(data-placeholder);
+}

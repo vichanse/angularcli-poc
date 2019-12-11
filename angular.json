@@ -2,5 +2,302 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "webshop": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/webshop",
+      "sourceRoot": "projects/webshop/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/webshop",
+            "index": "projects/webshop/src/index.html",
+            "main": "projects/webshop/src/main.ts",
+            "polyfills": "projects/webshop/src/polyfills.ts",
+            "tsConfig": "projects/webshop/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/webshop/src/favicon.ico",
+              "projects/webshop/src/assets"
+            ],
+            "styles": [
+              "projects/webshop/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/webshop/src/environments/environment.ts",
+                  "with": "projects/webshop/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "webshop:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "webshop:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "webshop:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/webshop/src/test.ts",
+            "polyfills": "projects/webshop/src/polyfills.ts",
+            "tsConfig": "projects/webshop/tsconfig.spec.json",
+            "karmaConfig": "projects/webshop/karma.conf.js",
+            "assets": [
+              "projects/webshop/src/favicon.ico",
+              "projects/webshop/src/assets"
+            ],
+            "styles": [
+              "projects/webshop/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/webshop/tsconfig.app.json",
+              "projects/webshop/tsconfig.spec.json",
+              "projects/webshop/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/webshop/e2e/protractor.conf.js",
+            "devServerTarget": "webshop:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "webshop:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "jcertif": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/jcertif",
+      "sourceRoot": "projects/jcertif/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/jcertif",
+            "index": "projects/jcertif/src/index.html",
+            "main": "projects/jcertif/src/main.ts",
+            "polyfills": "projects/jcertif/src/polyfills.ts",
+            "tsConfig": "projects/jcertif/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/jcertif/src/favicon.ico",
+              "projects/jcertif/src/assets"
+            ],
+            "styles": [
+              "projects/jcertif/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/jcertif/src/environments/environment.ts",
+                  "with": "projects/jcertif/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "jcertif:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "jcertif:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "jcertif:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/jcertif/src/test.ts",
+            "polyfills": "projects/jcertif/src/polyfills.ts",
+            "tsConfig": "projects/jcertif/tsconfig.spec.json",
+            "karmaConfig": "projects/jcertif/karma.conf.js",
+            "assets": [
+              "projects/jcertif/src/favicon.ico",
+              "projects/jcertif/src/assets"
+            ],
+            "styles": [
+              "projects/jcertif/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/jcertif/tsconfig.app.json",
+              "projects/jcertif/tsconfig.spec.json",
+              "projects/jcertif/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/jcertif/e2e/protractor.conf.js",
+            "devServerTarget": "jcertif:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "jcertif:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "customer-reference": {
+      "projectType": "library",
+      "root": "projects/customer-reference",
+      "sourceRoot": "projects/customer-reference/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/customer-reference/tsconfig.lib.json",
+            "project": "projects/customer-reference/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/customer-reference/src/test.ts",
+            "tsConfig": "projects/customer-reference/tsconfig.spec.json",
+            "karmaConfig": "projects/customer-reference/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/customer-reference/tsconfig.lib.json",
+              "projects/customer-reference/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "edit-input": {
+      "projectType": "library",
+      "root": "projects/edit-input",
+      "sourceRoot": "projects/edit-input/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/edit-input/tsconfig.lib.json",
+            "project": "projects/edit-input/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/edit-input/src/test.ts",
+            "tsConfig": "projects/edit-input/tsconfig.spec.json",
+            "karmaConfig": "projects/edit-input/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/edit-input/tsconfig.lib.json",
+              "projects/edit-input/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "webshop"
 }
